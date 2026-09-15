@@ -1,0 +1,53 @@
+# Anexo A, apartado A.2 · Adaptadores: configuración común de entrenamiento.
+#
+# La configuración común con el entrenamiento limitado a 40 pasos de optimización y las secuencias a 8.192 tokens;
+# se usa para continuar LoRA-IGT-1época desde su paso 15 hasta el 40, en un adaptador aparte.
+
+base_model:
+  id: "meta-llama/Llama-3.1-70B"
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+  bnb_4bit_compute_dtype: "bfloat16"
+
+lora:
+  r: 8
+  lora_alpha: 8
+  lora_dropout: 0.0
+  bias: "none"
+  task_type: "CAUSAL_LM"
+  use_rslora: true
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+
+training:
+  num_train_epochs: 3   # 511 records / 32 batch = ~16 steps/epoch; 3 epochs = ~48 steps (max_steps trunca a 40)
+  max_steps: 40          # PARIDAD con LoRA-noIGT-fullscale-mid checkpoint-40
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 32
+  learning_rate: 5.0e-5
+  weight_decay: 0.01
+  warmup_steps: 100
+  lr_scheduler_type: "linear"
+  optim: "adamw_8bit"
+  embedding_learning_rate_ratio: 0.1
+  bf16: true
+  max_seq_length: 8192
+  gradient_checkpointing: true
+  seed: 20260506
+
+masking:
+  answer_marker_open: "<<"
+  answer_marker_close: ">>"
+
+logging:
+  logging_steps: 5
+  save_steps: 20
+  save_total_limit: 3
+  report_to: "none"

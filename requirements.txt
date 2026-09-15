@@ -1,0 +1,8 @@
+# Python 3.11. Versiones con las que se entrenaron y evaluaron los modelos de lenguaje (GPU de 80 GB).
+torch==2.10.0
+transformers==4.49.0
+peft==0.19.1
+bitsandbytes==0.49.2
+datasets==4.8.5
+numpy
+scipy

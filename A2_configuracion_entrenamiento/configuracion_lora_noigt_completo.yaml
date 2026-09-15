@@ -1,0 +1,52 @@
+# Anexo A, apartado A.2 · Adaptadores: configuración común de entrenamiento.
+#
+# La configuración común con guardado de puntos de control más frecuente, necesario en un entrenamiento de días;
+# la frecuencia de guardado no cambia los pesos entrenados. Las secuencias van troceadas a 8.192 tokens.
+
+base_model:
+  id: "meta-llama/Llama-3.1-70B"
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+  bnb_4bit_compute_dtype: "bfloat16"
+
+lora:
+  r: 8
+  lora_alpha: 8
+  lora_dropout: 0.0
+  bias: "none"
+  task_type: "CAUSAL_LM"
+  use_rslora: true
+  target_modules:
+    - q_proj
+    - k_proj
+    - v_proj
+    - o_proj
+    - gate_proj
+    - up_proj
+    - down_proj
+
+training:
+  num_train_epochs: 1
+  per_device_train_batch_size: 1   # effective batch 32 via gradient accumulation
+  gradient_accumulation_steps: 32
+  learning_rate: 5.0e-5
+  weight_decay: 0.01
+  warmup_steps: 100
+  lr_scheduler_type: "linear"
+  optim: "adamw_8bit"
+  embedding_learning_rate_ratio: 0.1   # embedding_lr = learning_rate * 0.1
+  bf16: true
+  max_seq_length: 32768   # se reduce a 8192 vía CLI --max-seq-length en el launcher
+  gradient_checkpointing: true
+  seed: 20260506
+
+masking:
+  answer_marker_open: "<<"
+  answer_marker_close: ">>"
+
+logging:
+  logging_steps: 10
+  save_steps: 20          # ~1.8h/checkpoint @ ~320 s/step (vs 500 canónico) — resumable multi-día
+  save_total_limit: 3
+  report_to: "none"
