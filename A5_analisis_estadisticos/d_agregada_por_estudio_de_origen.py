@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Anexo A, apartado A.5 · Análisis estadísticos: procedimiento paso a paso.
+"""Anexo A, apartado A.5 · Análisis estadísticos: módulos comunes y scripts.
 
 Calcula la media de Δ (Centaur menos base) dentro de cada uno de los catorce estudios de origen y, sobre
 esas catorce medias, su media dividida por su desviación típica, con un intervalo por bootstrap de estudios. Es la

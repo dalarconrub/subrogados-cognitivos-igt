@@ -573,7 +573,7 @@ def main() -> int:
     cache_centaur_sha = _file_sha256(cache_centaur_path)
     cache_randominit_sha = _file_sha256(cache_randominit_path)
     provenance = {
-        "tier": "C2.5_sensitivity",
+        "tier": "sensibilidad",
         "reporting_location": "[revisión interna] [revisión interna] / anexo",
         "script_path": str(Path(__file__).relative_to(Path(__file__).resolve().parents[5])
                            if Path(__file__).is_absolute() else Path(__file__)),

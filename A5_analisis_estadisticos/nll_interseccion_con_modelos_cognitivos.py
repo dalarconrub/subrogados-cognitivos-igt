@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Anexo A, apartado A.5 · Análisis estadísticos: procedimiento paso a paso.
+"""Anexo A, apartado A.5 · Análisis estadísticos: módulos comunes y scripts.
 
 Para los contrastes de Centaur con VSE, ORL y PVL-Δ, calcula la verosimilitud negativa media de ambos modelos
 sobre exactamente las mismas sesiones, para que las medias de las Tablas 5.2, 5.3 y 5.4 se refieran al mismo conjunto.

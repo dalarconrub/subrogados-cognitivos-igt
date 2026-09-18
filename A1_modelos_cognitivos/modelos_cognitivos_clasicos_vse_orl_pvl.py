@@ -332,7 +332,7 @@ def fit_dataset(
       trials[k:]. This is the H1 OUT-OF-SAMPLE metric (`metric=
       "subject_adaptive_temporal_holdout"`), comparable to Centaur once Centaur is
       re-scored on the same held-out suffix. The window policy (k / f) IS the H1
-      estimand — set by the director, not hard-coded here.
+      estimand — fixed by the study design, not hard-coded here.
 
       NOTE (sequential models): the eval NLL is computed by running the model
       forward over the FULL sequence with the fitted params and slicing [k:], so

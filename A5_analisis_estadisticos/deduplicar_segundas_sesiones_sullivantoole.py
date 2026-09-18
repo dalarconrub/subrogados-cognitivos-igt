@@ -1,7 +1,7 @@
-"""Anexo A, apartado A.5 · Análisis estadísticos: procedimiento paso a paso.
+"""Anexo A, apartado A.5 · Análisis estadísticos: módulos comunes y scripts.
 
 Parche que todos los scripts del apartado aplican antes de calcular: elimina de las particiones las 46
-sesiones duplicadas, que eran copias exactas de las segundas sesiones ya presentes en el corpus.
+copias repetidas de la segunda sesión de Sullivan-Toole et al. (2022), ya presente en el corpus.
 """
 
 from __future__ import annotations

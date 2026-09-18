@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Anexo A, apartado A.5 · Análisis estadísticos: procedimiento paso a paso.
+"""Anexo A, apartado A.5 · Análisis estadísticos: módulos comunes y scripts.
 
 Para cada contraste y partición, cambia al azar el signo de las diferencias pareadas diez mil veces con
 la semilla del estudio, calcula la media en cada permutación y sitúa la media observada en esa distribución; el

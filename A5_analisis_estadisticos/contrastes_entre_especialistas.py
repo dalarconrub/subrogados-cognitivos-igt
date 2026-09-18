@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Anexo A, apartado A.5 · Análisis estadísticos: procedimiento paso a paso.
+"""Anexo A, apartado A.5 · Análisis estadísticos: módulos comunes y scripts.
 
 Para el par de una época y el par de cuarenta pasos, calcula la diferencia por sesión entre el adaptador
 entrenado con la tarea y el entrenado con el complemento, con su media, su desviación típica, la fracción de

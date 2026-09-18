@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Anexo A, apartado A.5 · Análisis estadísticos: procedimiento paso a paso.
+"""Anexo A, apartado A.5 · Análisis estadísticos: módulos comunes y scripts.
 
 Ejecuta el módulo de métrica dual sobre las 1.041 sesiones y escribe, para los contrastes de Centaur y de
 la base con los tres modelos cognitivos, la d con las dos convenciones y cuánto cambia entre ellas.

@@ -9,7 +9,7 @@ sesiones de catorce estudios de origen.
 |---|---|
 | `A1_modelos_cognitivos/` | Implementación de VSE, ORL y PVL-Δ y su ajuste por máxima verosimilitud con validación cruzada de cinco pliegues |
 | `A2_configuracion_entrenamiento/` | Entrenamiento de los adaptadores LoRA: entrenador con pérdida enmascarada a los tokens de respuesta, ficheros de configuración, lanzadores y cuadernos de Colab |
-| `A3_formato_corpus/` | Conversión de las sesiones al formato de texto de Psych-101 y construcción de los corpora de adaptación (subcorpus IGT, complemento sin IGT, ruido, texto irrelevante) |
+| `A3_formato_corpus/` | Conversión de las sesiones al formato de texto de Psych-101 y construcción de los corpus de adaptación (subcorpus IGT, complemento sin IGT, ruido, texto irrelevante) |
 | `A4_ciclo_entrenar_evaluar/` | Inferencia: servidor y cliente que obtienen la probabilidad de cada elección humana y evaluación de cada adaptador |
 | `A5_analisis_estadisticos/` | Análisis estadísticos del estudio: contrastes pareados por sesión, bootstrap por estudios de origen, permutación del signo, exclusión sucesiva por estudio, d agregada, sensibilidad renorm4, masa de probabilidad sobre los cuatro mazos, verosimilitud absoluta por modelo y partición, verosimilitud sobre las mismas sesiones que los modelos cognitivos y contrastes entre los dos especialistas de cada par, junto con los cinco módulos comunes |
 

@@ -30,7 +30,7 @@ def count_answer_markers(text: str, open_marker: str = "<<") -> int:
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--manifest", type=Path, required=True,
-                   help="igt_paper1_eval_data.json (lista de [revisión interna] prompts IGT)")
+                   help="igt_paper1_eval_data.json (lista de prompts IGT del manifiesto)")
     p.add_argument("--output", type=Path, required=True, help="Output JSONL corpus_igt")
     p.add_argument("--partition", default=TRAIN_PARTITION,
                    help=f"Partición a extraer como corpus de entrenamiento (default {TRAIN_PARTITION})")

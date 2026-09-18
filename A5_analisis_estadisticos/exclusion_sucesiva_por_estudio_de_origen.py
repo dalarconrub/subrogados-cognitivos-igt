@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Anexo A, apartado A.5 · Análisis estadísticos: procedimiento paso a paso.
+"""Anexo A, apartado A.5 · Análisis estadísticos: módulos comunes y scripts.
 
 Ejecuta el módulo de exclusión sucesiva sobre las 1.041 sesiones y escribe, por contraste, la d
 completa, la mediana y el rango de las catorce d con un estudio retirado, cuántas conservan el signo y el estudio

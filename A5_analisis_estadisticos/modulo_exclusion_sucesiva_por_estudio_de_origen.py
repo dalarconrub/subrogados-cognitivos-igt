@@ -1,4 +1,4 @@
-"""Anexo A, apartado A.5 · Análisis estadísticos: procedimiento paso a paso.
+"""Anexo A, apartado A.5 · Análisis estadísticos: módulos comunes y scripts.
 
 Para cada contraste de Centaur con otro modelo, retira un estudio de origen completo, recalcula la d de
 Cohen con las sesiones de los trece restantes y repite con cada uno de los catorce; registra la mediana y el rango
@@ -241,7 +241,7 @@ def main():
 
     output = {
         "generator": str(Path(__file__).relative_to(ROOT)),
-        "phase": "LOEO desagregado 10 contrastes Centaur vs resto (director-decision 2026-06-07; A_TRAIN desagregado a cohortes históricas Steingroever 2015; consolidación 23 → 20 experimentos efectivos)",
+        "phase": "LOEO desagregado 10 contrastes Centaur vs resto (decisión del estudio 2026-06-07; A_TRAIN desagregado a cohortes históricas Steingroever 2015; consolidación 23 → 20 experimentos efectivos)",
         "method": "Hash SHA-256 sobre (gain, |loss|) × N-1 trials para remapear 511 A_TRAIN → cohortes históricas Steingroever 2015. Las 9 cohortes que aparecen en A y B se unifican bajo un solo experimento. LOEO determinístico sobre Combinado_1087 con la nueva granularidad.",
         "n_experiments_effective_disaggregated": len(exps_eff),
         "experiments_distribution": dict(exps_eff),

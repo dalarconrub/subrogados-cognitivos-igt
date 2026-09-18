@@ -155,7 +155,7 @@ def main(argv: list[str] | None = None) -> int:
 
     args.output.mkdir(parents=True, exist_ok=True)
 
-    print(f"\n=== LoRA-noIGT-FULLSCALE clean_1087 ([revisión interna] prompts) ===")
+    print(f"\n=== LoRA-noIGT-FULLSCALE clean_1087 ===")
     out_jsonl = args.output / 'nll_lora_noigt_fullscale_clean1087.partial.jsonl'
     pt_jsonl = args.output / 'per_trial_lora_noigt_fullscale_clean1087.partial.jsonl'
     out = compute_lora_nll_resumable(

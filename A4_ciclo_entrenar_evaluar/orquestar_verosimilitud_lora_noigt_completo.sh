@@ -42,7 +42,7 @@ python -c "from huggingface_hub import whoami; print('[preflight] HF user:', who
 N_WL=$(python -c "import json; print(len(json.load(open('$WHITELIST_1087'))['subjects_flat_1087']))")
 [ "$N_WL" = "1087" ] || { echo "ABORT: whitelist tiene $N_WL, esperado 1087"; exit 1; }
 FS_SZ=$(du -sh "$FULLSCALE_ADAPTER" | awk '{print $1}')
-echo "[preflight] LoRA-noIGT-fullscale adapter: $FS_SZ; whitelist clean1087: 1087 sujetos"
+echo "[preflight] LoRA-noIGT-fullscale adapter: $FS_SZ; whitelist clean1087"
 
 # 2. Eval B único — LoRA-noIGT-fullscale sobre clean_1087 ([revisión interna] sujetos)
 echo "[eval] Eval B: LoRA-noIGT-fullscale sobre clean_1087 (1087) $(date -u +%H:%M:%SZ)"
@@ -66,7 +66,7 @@ manifest = {
     "outputs": {
         "nll_lora_noigt_fullscale_clean1087.json": sha(f"{R}/nll_lora_noigt_fullscale_clean1087.json"),
     },
-    "method": "Eval B: eval_lora_noigt_fullscale_clean1087.py sobre 1087 sujetos del re-encuadre limpio (input [revisión interna] [revisión interna] [revisión interna] extendida). Verdict de disociacion full-scale (470 OOD) se calcula POST-PROC local desde el output filtrado a los 470 prompt_ids del cache canonical Track B y comparado contra Centaur + LoRA-IGT cacheados.",
+    "method": "Eval B: eval_lora_noigt_fullscale_clean1087.py sobre las sesiones del re-encuadre limpio (cachés extendidas). Verdict de disociacion full-scale (470 OOD) se calcula POST-PROC local desde el output filtrado a los 470 prompt_ids del cache canonical Track B y comparado contra Centaur + LoRA-IGT cacheados.",
 }
 out = f"{R}/noigt_fullscale_eval_run_manifest.json"
 with open(out, 'w') as f:

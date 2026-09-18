@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Anexo A, apartado A.5 · Análisis estadísticos: procedimiento paso a paso.
+"""Anexo A, apartado A.5 · Análisis estadísticos: módulos comunes y scripts.
 
 Calcula, sobre las 1.041 sesiones, la masa media de probabilidad que Centaur y la base asignan a los
 cuatro tokens de mazo de cada sesión en cada ensayo.

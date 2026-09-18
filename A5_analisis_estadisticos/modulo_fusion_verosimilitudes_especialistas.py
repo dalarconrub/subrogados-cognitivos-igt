@@ -1,4 +1,4 @@
-"""Anexo A, apartado A.5 · Análisis estadísticos: procedimiento paso a paso.
+"""Anexo A, apartado A.5 · Análisis estadísticos: módulos comunes y scripts.
 
 Une, para LoRA-IGT-1época y LoRA-noIGT-1época, la verosimilitud por sesión calculada sobre las cohortes
 independientes con la calculada después sobre las sesiones restantes, y añade el desglose de la verosimilitud
@@ -25,7 +25,7 @@ LORA_NOIGT_617 = ROOT / 'tesis/data_analyses/llm_evaluation/paper_01_igt/results
 
 
 def load_fused(p470, p617):
-    """Fusiona caches 470 + 617 = 1087 sujetos."""
+    """Fusiona las cachés de los dos bloques de sesiones de cada especialista."""
     out = {}
     for p in [p470, p617]:
         with open(p) as f:
@@ -61,7 +61,7 @@ def main():
         'generator': 'tesis/data_analyses/llm_evaluation/paper_01_igt/anexo_binz_holdout/compute_nll_absolute_clean_1087_v2.py',
         'version': '2.0',
         'phase': '[revisión interna] resolutivo — extensión NLL absolutos por modelo y partición (v2: añadidos LoRA-IGT y LoRA-noIGT)',
-        'purpose': 'Director-driven 2026-05-30 PM opción c matriz completa: extiende la [revisión interna] del [revisión interna] [revisión interna] a 10 modelos × 4 particiones (40 celdas) tras la cobertura simétrica conseguida por el [revisión interna] extended (extension corriendo en Lightning A100 80GB, [revisión interna] gap × 2 adapters).',
+        'purpose': 'Matriz completa de 10 modelos × 4 particiones (40 celdas) a partir de las cachés extendidas de los dos especialistas.',
         'method': v_method_str(),
         'lora_igt_noigt_interpretation_caveats': {
             'A_TRAIN_511': 'LEAKAGE TRIVIAL: LoRA-IGT y LoRA-noIGT entrenaron sobre psych101_train; la NLL aquí es cota inferior de memorización del especialista, no medida de generalización.',

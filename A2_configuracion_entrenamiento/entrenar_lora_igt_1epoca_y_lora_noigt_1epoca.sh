@@ -22,7 +22,7 @@ mkdir -p "$R"
 SEQ_ARG=()
 if [ -n "${MAX_SEQ_LENGTH:-}" ]; then SEQ_ARG=(--max-seq-length "$MAX_SEQ_LENGTH"); fi
 
-# auth HF: acepta env HF_TOKEN O token cacheado (`huggingface-cli login`) -> el director
+# auth HF: acepta env HF_TOKEN O token cacheado (`huggingface-cli login`) -> el usuario
 # no necesita pasar el secreto por el agente; basta con que la cuenta autentique.
 python -c "from huggingface_hub import whoami; print('[run] HF user:', whoami()['name'])" 2>/dev/null \
   || { echo "ABORT: sin auth HF valida. En el Studio: 'huggingface-cli login' (o export HF_TOKEN). Acceso a Llama-3.1-70B + marcelbinz/Psych-101."; exit 1; }

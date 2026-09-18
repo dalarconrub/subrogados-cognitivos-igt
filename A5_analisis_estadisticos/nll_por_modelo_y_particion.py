@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Anexo A, apartado A.5 · Análisis estadísticos: procedimiento paso a paso.
+"""Anexo A, apartado A.5 · Análisis estadísticos: módulos comunes y scripts.
 
 Escribe la media (y su desviación típica) de la verosimilitud negativa de cada modelo de lenguaje y
 cognitivo en cada partición; es el insumo con el que se ordenan los modelos frente a la base.

@@ -1,4 +1,4 @@
-"""Anexo A, apartado A.5 · Análisis estadísticos: procedimiento paso a paso.
+"""Anexo A, apartado A.5 · Análisis estadísticos: módulos comunes y scripts.
 
 Define las funciones comunes a todos los análisis: lectura del manifiesto por ensayo, construcción de las
 particiones A (511 sesiones incluidas en el ajuste de Centaur), B (66 retenidas, identificadas por su huella de
@@ -179,10 +179,10 @@ def main():
     print()
 
     result = {
-        'generator': 'tools/compute_nll_absolute_clean_1087.py (ad-hoc post-R3 closeout — director request 2026-05-30 PM)',
+        'generator': 'tools/compute_nll_absolute_clean_1087.py (decisión del estudio, 2026-05-30)',
         'phase': '[revisión interna] resolutivo — extensión NLL absolutos por modelo y partición',
-        'purpose': 'Director solicitó exponer NLL absolutos (no solo Δ NLL) de cada modelo sobre el re-encuadre limpio clean_1087. Tabla 8 modelos × 4 particiones (32 celdas). LoRA-IGT y LoRA-noIGT excluidos por diseño anti-leakage [revisión interna] del preprint Paper 1 (decisión director 2026-05-30: documentar asimetría en lugar de re-inferencia GPU).',
-        'method': 'NLL per-sujeto-mean-across-tokens en métrica homogénea para los 8 modelos. Centaur+LoRA-noise+LoRA-irrelevant+RandomInit del cache canonical stage_7_5_2; Llama base recomputado per-sujeto desde per_trial_logprobs del run real_centaur_psych101 sobre [revisión interna] fused; VSE/ORL/PVL-Δ del cache extended pooled-ML K=5 subject-kfold con low_train_warning excluidos. Particiones: A=TRAIN_511 (psych101_train exp1+2+3); B=HOLDOUT_66 proxy via hash-gemelos SHA-256 trial-a-trial sobre 577 sub-cohortes Steingroever externas; C=EXTERNAL_510 (11 experiments externos genuinos: Maia + Kildahl + SST + Chávez + Ahn HC/Amp/Her). HOLDOUT_66 exacto Binz NO disponible en métrica canonical (cache n=1598, no incluye los 66 exactos); proxy hash-gemelos es la solución metodológica documentada en cap6 [revisión interna] D3 [revisión interna] + [revisión interna] [revisión interna] [revisión interna].5.',
+        'purpose': 'Exponer los NLL absolutos (no solo Δ NLL) de cada modelo sobre el re-encuadre limpio clean_1087. Tabla 8 modelos × 4 particiones (32 celdas). LoRA-IGT y LoRA-noIGT excluidos por diseño anti-leakage [revisión interna] del preprint Paper 1 (decisión del estudio 2026-05-30: documentar la asimetría en lugar de repetir la inferencia).',
+        'method': 'NLL per-sujeto-mean-across-tokens en métrica homogénea para los 8 modelos. Centaur+LoRA-noise+LoRA-irrelevant+RandomInit del cache canonical stage_7_5_2; Llama base recomputado per-sujeto desde per_trial_logprobs del run real_centaur_psych101 sobre [revisión interna] fused; VSE/ORL/PVL-Δ del cache extended pooled-ML K=5 subject-kfold con low_train_warning excluidos. Particiones: A=TRAIN_511 (psych101_train exp1+2+3); B=HOLDOUT_66 proxy via hash-gemelos SHA-256 trial-a-trial sobre 577 sub-cohortes Steingroever externas; C=EXTERNAL_510 (11 experiments externos genuinos: Maia + Kildahl + SST + Chávez + Ahn HC/Amp/Her). HOLDOUT_66 exacto Binz NO disponible en métrica canonical (cache n=1598, no incluye los 66 exactos); proxy hash-gemelos es la solución metodológica documentada en el capítulo de resultados.',
         'partitions_defined': {
             'A_TRAIN_511': {'n': len(parts['A_TRAIN_511']), 'rationale': 'psych101_train_exp1+exp2+exp3 (sujetos vistos por Centaur durante fine-tuning)'},
             'B_HOLDOUT_66_proxy_hash_gemelos': {'n': len(parts['B_HOLDOUT_66_proxy_hash_gemelos']), 'rationale': 'sub-cohortes Steingroever externas que hash-gemelean trial-a-trial con los 66 sujetos del psych101_holdout exp1+exp2+exp3 — los mismos sujetos clínicos bajo prompt SHA-seeded distinto, no vistos por Centaur en su prompt-form canonical'},

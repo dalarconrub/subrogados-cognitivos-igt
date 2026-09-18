@@ -1,4 +1,4 @@
-"""Anexo A, apartado A.5 · Análisis estadísticos: procedimiento paso a paso.
+"""Anexo A, apartado A.5 · Análisis estadísticos: módulos comunes y scripts.
 
 A partir de las probabilidades por ensayo guardadas de Centaur y de la base, calcula para cada ensayo la
 verosimilitud negativa con las dos convenciones, sobre el vocabulario completo y renormalizada sobre los cuatro
@@ -349,7 +349,7 @@ def main() -> int:
     print("\n# 7. Building output JSON...", file=sys.stderr)
     result = {
         "generator": str(Path(__file__).relative_to(ROOT)),
-        "phase": "D5 renorm4 dual-metric implementación — director decisión 2026-06-04 + Opción 2 2026-06-06",
+        "phase": "D5 renorm4 dual-metric implementación — decisión del estudio 2026-06-04 y opción 2 de 2026-06-06",
         "purpose": "Dual-metric NLL (Binz convencional + renorm4 sobre 4 mazos) sobre [revisión interna] del [revisión interna] (H1 vs cognitivos). Acotado a contrastes LLM vs cognitivo donde la asimetría de soporte probabilístico hace renorm4 metodológicamente obligatoria.",
         "method": "NLL Binz: -log(p_chosen) sobre vocabulario completo del transformador (target_token_logprobs). NLL renorm4: softmax restringido a los 4 deck tokens del sujeto (cross-link via deck_label_map del manifest base). Política mass_below_4 = (a) conservadora: excluir trial si los 4 deck tokens no están en top-K saved. Bootstrap por conglomerados de experimentos (10⁴ remuestreos, semilla 20260506) sobre la d de Cohen pareada.",
         "params": {"seed": SEED, "n_boot": N_BOOT},

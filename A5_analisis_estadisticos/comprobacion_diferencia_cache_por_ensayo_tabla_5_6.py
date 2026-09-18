@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Anexo A, apartado A.5 · Análisis estadísticos: procedimiento paso a paso.
+"""Anexo A, apartado A.5 · Análisis estadísticos: módulos comunes y scripts.
 
 Compara, sesión a sesión, la verosimilitud negativa de Centaur recalculada desde las probabilidades por
 ensayo guardadas con la de la caché agregada de la inferencia, y mide cuánto desplaza esa diferencia la d del

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Anexo A, apartado A.5 · Análisis estadísticos: procedimiento paso a paso.
+"""Anexo A, apartado A.5 · Análisis estadísticos: módulos comunes y scripts.
 
 Para cada par de modelos y cada partición (A, B, C y Combinado) calcula la diferencia Δ de verosimilitud
 negativa por sesión, su media y desviación típica, la t pareada unilateral con sus grados de libertad, la d de
