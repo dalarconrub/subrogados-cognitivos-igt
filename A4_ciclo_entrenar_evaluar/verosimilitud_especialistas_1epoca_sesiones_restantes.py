@@ -194,7 +194,7 @@ def main(argv: list[str] | None = None) -> int:
         final_path.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding='utf-8')
         print(f"  -> {final_path} ({len(out)} sujetos)")
 
-    print(f"\n[DONE] eval_lora_clean1087_extension finished. Run post-proc local en Mac para fusionar 470 + 617 → [revisión interna] + actualizar [revisión interna].")
+    print(f"\n[DONE] eval_lora_clean1087_extension finished. Queda fusionar los dos bloques (470 + 617) y actualizar la caché de verosimilitudes.")
     return 0
 
 

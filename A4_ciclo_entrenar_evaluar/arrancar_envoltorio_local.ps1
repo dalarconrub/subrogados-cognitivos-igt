@@ -37,7 +37,7 @@ if (Test-Path $EnvFile) {
 $OutLog = Join-Path $LogDir "centaur_service.out.log"
 $ErrLog = Join-Path $LogDir "centaur_service.err.log"
 
-$Python = "C:\Python310\python.exe"
+$Python = if ($env:PYTHON_EXE) { $env:PYTHON_EXE } else { "python" }
 if (-not (Test-Path $Python)) {
     $Python = "python"
 }

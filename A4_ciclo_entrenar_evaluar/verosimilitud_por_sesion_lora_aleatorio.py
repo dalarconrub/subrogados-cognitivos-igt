@@ -423,7 +423,7 @@ def verdict_c25(stats: dict, training_status: str) -> str:
     """[revisión interna] verdict. [revisión interna] §2.Q1/Q2: label discipline by training_status.
 
     - If untrained_random_base: rename verdict to "lower_bound_check" to avoid
-      overclaiming "pretraining matters" (Reviewer-2 would object).
+      overclaiming "pretraining matters": the contrast with the untrained reference is descriptive.
     - If randominit_trained_control: use "pretraining_matters" framing.
     - If unknown: conservative "lower_bound_check".
     """
